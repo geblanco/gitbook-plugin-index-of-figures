@@ -1,0 +1,11 @@
+/* Taken from https://github.com/WorldAfterCapital/gitbook-plugin-bibtex-cite */
+.figures td:first-child {
+  width: 50px;
+}
+.figures td {
+  border: none !important;
+  vertical-align: top;
+}
+.figures tr {
+  border: none !important;
+}

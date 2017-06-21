@@ -1,0 +1,30 @@
+{
+  "name": "gitbook-plugin-index-of-figures",
+  "description": "Index of Figures plugin for GitBook",
+  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "gitbook": "*"
+  },
+  "homepage": "https://github.com/m0n0l0c0/gitbook-plugin-index-of-figures",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m0n0l0c0/gitbook-plugin-index-of-figures.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m0n0l0c0/gitbook-plugin-index-of-figures/issues"
+  },
+  "gitbook": {
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "the plugin config file path",
+        "required": true
+      }
+    }
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1"
+  }
+}
