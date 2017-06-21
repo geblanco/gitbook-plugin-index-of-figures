@@ -1,7 +1,7 @@
 'use strict'
 
 const cheerio = require('cheerio')
-const { readFileSync } = require('fs')
+const readFileSync = require('fs').readFileSync
 
 function readJSON(path){
 	const file = readFileSync(path, { encoding: 'utf8'})
