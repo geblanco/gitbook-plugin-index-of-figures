@@ -25,18 +25,18 @@ module.exports = {
 		css: ["style.css"]
 	},
 	hooks: {
-    init: function(){
-    	const cfg = readJSON(this.config.get('pluginsConfig')['index-of-figures'].path)
-      this.config.set('figures', cfg.figures)
-      this.config.set('figurePrefix', cfg.prefix || 'Fig.')
-      insertedFigures = []
-    },
-    page: function( page ){
-    	const $ = cheerio.load(page.content)
-    	const prefix = this.config.get('figurePrefix')
-    	const figs = {}
-    	
-    	// Find the figures from fig caption
+		init: function(){
+			const cfg = readJSON(this.config.get('pluginsConfig')['index-of-figures'].path)
+			this.config.set('figures', cfg.figures)
+			this.config.set('figurePrefix', cfg.prefix || 'Fig.')
+			insertedFigures = []
+		},
+		page: function( page ){
+			const $ = cheerio.load(page.content)
+			const prefix = this.config.get('figurePrefix')
+			const figs = {}
+			
+			// Find the figures from fig caption
 			$('figure').each(function(){
 				const num = $(this).attr('id')
 				const src = $('img', this).first().attr('src')
@@ -51,9 +51,9 @@ module.exports = {
 			})
 
 			page.content = $.html()
-    	return page
-    }
-  },
+			return page
+		}
+	},
 	filters: {
 		fig: function( key ){
 
