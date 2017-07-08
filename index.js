@@ -85,6 +85,10 @@ module.exports = {
 
 				let result = '<table class="figures">'
 
+				// Sort by index in figures json, not by insertion.
+				// Insertion is done in processing order, which is done alphabetically,
+				// this does not ensures figure-document order
+				insertedFigures.sort((a, b) => getFigureIndex(a, allFigures) - getFigureIndex(b, allFigures))
 				insertedFigures.forEach(function( figKey ){                
 
 					const index = getFigureIndex(figKey, allFigures) + 1
