@@ -34,7 +34,7 @@ module.exports = {
 			const cfg = readJSON(this.config.get('pluginsConfig')['index-of-figures'].path)
 			this.config.set('figures', cfg.figures)
 			this.config.set('figurePrefix', cfg.prefix || 'Fig.')
-			this.config.set('order', (cfg.order && order[cfg.order])?(order[cfg.order] : order['appearance']))
+			this.config.set('order', (cfg.order && order[cfg.order])?order[cfg.order] : order['appearance'])
 			insertedFigures = []
 		},
 		page: function( page ){
