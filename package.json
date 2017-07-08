@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-index-of-figures",
   "description": "Index of Figures plugin for GitBook",
   "main": "index.js",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "engines": {
     "gitbook": "*"
   },
@@ -26,6 +26,12 @@
         "type": "string",
         "description": "the prefix to use for the figures (more on README)",
         "required": false
+      },
+      "order": {
+        "type": "string",
+        "description": "wheter to order by figures.json or figure appearance (more on README)",
+        "required": false,
+        "default": "appearance"
       }
     }
   },

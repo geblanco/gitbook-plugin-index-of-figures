@@ -3,6 +3,11 @@
 const cheerio = require('cheerio')
 const readFileSync = require('fs').readFileSync
 
+const order = {
+	'appearance': 0,
+	'config': 1
+}
+
 function readJSON(path){
 	const file = readFileSync(path, { encoding: 'utf8'})
 	let ret = {}
@@ -29,6 +34,7 @@ module.exports = {
 			const cfg = readJSON(this.config.get('pluginsConfig')['index-of-figures'].path)
 			this.config.set('figures', cfg.figures)
 			this.config.set('figurePrefix', cfg.prefix || 'Fig.')
+			this.config.set('order', (cfg.order && order[cfg.order])?(order[cfg.order] : order['appearance']))
 			insertedFigures = []
 		},
 		page: function( page ){
@@ -88,7 +94,9 @@ module.exports = {
 				// Sort by index in figures json, not by insertion.
 				// Insertion is done in processing order, which is done alphabetically,
 				// this does not ensures figure-document order
-				insertedFigures.sort((a, b) => getFigureIndex(a, allFigures) - getFigureIndex(b, allFigures))
+				if( this.config.get('order') === order['config'] ){
+					insertedFigures.sort((a, b) => getFigureIndex(a, allFigures) - getFigureIndex(b, allFigures))
+				}
 				insertedFigures.forEach(function( figKey ){                
 
 					const index = getFigureIndex(figKey, allFigures) + 1
