@@ -65,7 +65,7 @@ Example of `./figures.json`
 ```
 
 * `prefix`: The prefix to put on each figure before the number (eg: Fig, Figure, ...). Defaults to `Fig.`
-* `order`: The order in which to put the figures in the index of figures. If set to config it will order figures as appear in the `figures.json`, if set to appearance will order by processing order.
+* `order`: The order in which to put the figures in the index of figures. If set to `"config"` it will order figures as appear in the `figures.json`, if set to `"appearance"` will order by processing order.
 * `figures`: An object with all the figures, the name of the figure is to be passed in the content page.
 * `path`: The path to the asset, this serve as a key to find the figure after figcaptions has processed all the figures and assigned numbers automatically, this is the way we substitute the text with the correct figure number.
 * `description`: This is the text used to display in the table of figures 
