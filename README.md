@@ -47,6 +47,7 @@ The table of figures should be included in a file called Figures.md
 
 If you name the file anything other than Figures.md, it will break the links from the individual figures to this Figures page (each figure will link to Figures.html#fig- plus the index of that figure).
 
+
 ### Figures settings
 
 Example of `./figures.json`
@@ -69,3 +70,8 @@ Example of `./figures.json`
 * `figures`: An object with all the figures, the name of the figure is to be passed in the content page.
 * `path`: The path to the asset, this serve as a key to find the figure after figcaptions has processed all the figures and assigned numbers automatically, this is the way we substitute the text with the correct figure number.
 * `description`: This is the text used to display in the table of figures 
+
+
+### Disclaimer
+
+__This module does not create the figure itself, you are still in charge of creating it with `![<text>](<image_path>)`__
